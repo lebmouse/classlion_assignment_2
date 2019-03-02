@@ -1,0 +1,20 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/components/post_list.css' %}">
+
+<div class="posts">
+    {% for post in posts %}
+    <div class="posts_item">
+        <h1>제목 : {{post.title}}</h1>
+        <p>태그 :
+            {% for tagitem in post.tag.all %}
+            <span> {{tagitem.name}} </span>
+            {% endfor %}
+        </p>
+        <p>생성날짜 :{{post.create_at}}</p>
+        <p>
+            내용 :{{post.summary}}
+            <a href="{% url 'post:detail' pk=post.id %}">...more</a>
+        </p>
+    </div>
+    {% endfor %}
+</div>

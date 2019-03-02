@@ -1,0 +1,19 @@
+{% extends "pages/base.html" %}
+
+{% block Content %}
+{% include "components/navigation.html" %}
+<div class="container">
+  <div class="post">
+    <h1>제목 : {{post.title}}</h1>
+    <p>태그 :
+      {% for tagitem in post.tag.all %}
+      <span> {{tagitem.name}} </span>
+      {% endfor %}
+    </p>
+    <p>생성날짜 :{{post.create_at}}</p>
+    <p>
+      내용 :{{post.content}}
+    </p>
+  </div>
+</div>
+{% endblock Content %}

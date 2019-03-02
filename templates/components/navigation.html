@@ -1,0 +1,30 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/components/navigation.css' %}">
+
+<div class="navigation">
+    <ul class="list-container">
+        <li>
+            <a class="navigation-link" href="{% url 'post:home' %}">
+                블로그
+            </a>
+        </li>
+        <li>
+            <div class="dropdown">
+                <span class="dropbtn"> 카테고리 </button>
+                    <div class="dropdown-content">
+                        {% for item in categories %}
+                        <a class="dropdown-item" href="{% url 'post:category' pk=item.id %}">
+                            {{item.name}}
+                        </a>
+                        {% endfor %}
+                    </div>
+            </div>
+        </li>
+        <li>
+            <a href="{% url 'post:create' %}">
+                글쓰기
+            </a>
+        </li>
+        <li>포트폴리오</li>
+    </ul>
+</div>
