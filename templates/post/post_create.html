@@ -6,7 +6,33 @@
   <div class="post-create">
     <form method="POST" action="{% url 'post:create' %}" class="post-form">
       {% csrf_token %}
-      {{ form.as_p }}
+      <div class="title-box">
+        <label for="title">
+          제목
+        </label>
+        {{ form.title }}
+      </div>
+      <div class="category-box">
+        <label for="category">
+          카테고리
+        </label>
+        {{ form.category }}
+        <button>+</button>
+      </div>
+      <div class="tag-box">
+        <label for="tag">
+          태그
+        </label>
+        {{ form.tag }}
+        <span>+</span>
+      </div>
+      <div class="content">
+        <label for="content">
+          내용
+        </label>
+        {{ form.content }}
+      </div>
+
       <button type="submit">
         제출
       </button>

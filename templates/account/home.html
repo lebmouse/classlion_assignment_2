@@ -1,0 +1,15 @@
+{% load socialaccount %}
+{% providers_media_js %}
+<body>
+    <h2><a href="/accounts/signup">회원가입</a></h2>
+ 
+    {% if user.is_authenticated %}
+    <span>{{ user }}님이 로그인중입니다.</span> 
+    <h2><a href="/accounts/logout">로그아웃</a></h2>
+    {% else %}
+    <a href="{% provider_login_url 'google' %}">Google</a>
+    <p>로그인 해주세용.</p>
+    <h2><a href="/accounts/login">로그인</a></h2>
+    {% endif %}
+ 
+</body>

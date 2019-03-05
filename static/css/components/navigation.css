@@ -83,3 +83,25 @@
 .dropdown:hover .dropbtn {
   color: white;
 }
+
+
+/* account-box */
+.navigation .account-box{
+  /* margin-right:0; */
+  float: right;
+  margin-right:1%;
+  /* width:50px */
+}
+
+.account-box .login-btn{
+  /* border: 0.5px solid blue; */
+  /* background-color: blue; */
+  padding:0;
+  box-sizing: border-box;
+
+}
+
+.login-btn:hover{
+  border: 1px solid blue;
+
+}

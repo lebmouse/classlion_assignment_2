@@ -1,5 +1,10 @@
+{% load socialaccount %}
+{% load account %}
+
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/components/navigation.css' %}">
+
+
 
 <div class="navigation">
     <ul class="list-container">
@@ -27,4 +32,24 @@
         </li>
         <li>포트폴리오</li>
     </ul>
+    <div class="account-box">
+        <ul class="list-container">
+            {% if user.is_authenticated %}
+            <li>{{ user.first_name}}님이 로그인중입니다.</li>
+            <li>
+                <form action="{% url 'account_logout' %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit">로그아웃</button>
+                </form>
+            </li>
+            {% else %}
+            <li style="padding:0">
+                <a class="login-btn" href="{% provider_login_url 'google' %}">
+                    <img src="http://pngimg.com/uploads/google/google_PNG19635.png" width="50px" height="50px">
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+
+    </div>
 </div>
