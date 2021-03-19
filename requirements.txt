@@ -9,7 +9,7 @@ django-allauth==0.39.1
 django-category==2.0.1
 django-filter==2.1.0
 django-object-tools==2.0.0
-djangorestframework==3.9.1
+djangorestframework==3.11.2
 gunicorn==19.9.0
 idna==2.8
 isort==4.3.4
